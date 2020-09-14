@@ -16,10 +16,10 @@ const FILES_TO_CACHE = [
   const DATA_CACHE_NAME = "data-cache-v1";
 
   // Install
-  self.addEventListener("install", function(evt) {
-    evt.waitUntil(
+  self.addEventListener("install", function(event) {
+    event.waitUntil(
       caches.open(CACHE_NAME).then(cache => {
-        console.log("Your files pre-cached successfully.");
+        console.log("Files pre-cached successfully.");
         return cache.addAll(FILES_TO_CACHE);
       })
     );
@@ -28,5 +28,21 @@ const FILES_TO_CACHE = [
   });
 
   // Activate
+  self.addEventListener("activate", function(event) {
+    event.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(
+                keyList.map(key => {
+                    if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+                        console.log("Removing old cache", key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+    // claim
+    self.clients.claim();
+  });
 
   // Fetch
