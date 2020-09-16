@@ -1,6 +1,6 @@
 # ProgressiveBudget
 
-Progressive Budget allows travelers to track their deposits and withdrawals without needing data or internet connection. This application allows a user to enter the spendings and earnings with or without a network connection. Entries completed without a connection are cached until the app goes back online.
+Progressive Budget allows travelers to track their deposits and withdrawals without needing data or internet connection. This application allows a user to enter their spendings and earnings with or without a network connection. Entries completed without a connection are cached until the app is able to go back online.
 
 ## User Story
 ```
