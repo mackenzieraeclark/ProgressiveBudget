@@ -16,4 +16,4 @@ This is a progressive web application built with popular technologies including 
 https://boiling-bastion-39313.herokuapp.com/
 
 ## Demo
-![Page Demo](demo.png)
+![Page Demo](public/assets/demo.png)
