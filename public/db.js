@@ -2,7 +2,7 @@
 let db;
 
 // Create request for a "budget" database.
-const request = indexedDB.open('budget', 1);
+const request = indexedDB.open('budget', 1); // this is my backup db when app goes offline
 
 // Create object store for pending to autoincrement
 request.onupgradeneeded = function (event) {
